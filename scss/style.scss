@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f1ee;
+}
+
+//NAVBAR
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 13vh;
+  background-color: #f6f1ee;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.7s;
+  z-index: 5;
+}
+
+.logo {
+  position: relative;
+  font-family: helvetica;
+  text-decoration: none;
+  color: #698faa;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 2em;
+  text-decoration: none;
+  margin-left: 10%;
+  line-height: 13vh;
+}
+
+nav label a:hover{
+  color: #698faa;
+}
+
+.editIcon {
+  float: right;
+  margin-right: 90%;
+  color: #698faa;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+nav .editIcon {
+  display: inline-block;
+  line-height: 15vh;
+}
+
+// cartCounter styles
+.quantity-cart {
+  background-color: #e7af99;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  float: right;
+  // margin-right: 5%;
+  padding: 4px;
+  top: 17%;
+  right: 3%;
+  position: absolute;
+  display: none;
+  cursor:pointer;
+}
+
+.productsTitle {
+  text-align: center;
+  padding: 4%;
+  font-size: 3.4rem;
+  font-family: "Overlock SC", sans-serif;
+  text-transform: uppercase;
+}
+
+.checkoutLetter{
+  padding-top: 6%;
+  padding-left: 0.7%;
+  font-size: 1.3rem;
+  font-family: "Overlock SC", sans-serif;
+}
+
+.btn-edit {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: #698faa;
+  color: #faf1e8;
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.hero {
+  min-height: calc(100vh - 60px);
+  background: url(../assets/slide.jpg) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 2rem;
+}
+
+.banner-title {
+  font-size: 5.4rem;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+
+.banner-btn {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: #698faa;
+  color: #faf1e8;
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardTitleFont {
+  font-family: "Overlock SC", sans-serif;
+  font-size: 25px;
+}
+
+.cardFont {
+  font-family: "Overlock SC", sans-serif;
+  font-size: 18px;
+}
+
+//CARRITO
+
+//modal content
+.modal-container {
+  width: 60%;
+  // height: 120%;
+  margin: 0 20%;
+  max-height: 80%;
+  color: #fff;
+  background-color: #e7af99;
+  // border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //for the top
+  position: fixed;
+  overflow: auto;
+  z-index: 300;
+  top: 10vh;
+  overflow-y: auto;
+overflow-y:scroll;
+//probando
+visibility: hidden;
+opacity: 0;
+transform: translateX(100%);
+transition: all .35s ease-in;
+}
+
+.modal-container::after{
+  position: fixed;
+  
+   width: 100%;
+   height: 100%; 
+ 
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+  
+  
+  top: 10vh;
+
+opacity: 0;
+content: "";
+pointer-events: none;
+transition: all .35s ease-in;
+}
+
+
+.modal-container.active{
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  position: fixed;
+}
+
+.modal-container.active::after{
+  position: fixed;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+ .modal-container::-webkit-scrollbar {
+   display: none;
+ }
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #698faa;
+  color: #fff;
+  width: 100%;
+   z-index: 200;
+  // position: fixed;
+}
+
+.modal-header-title {
+  justify-self: start;
+  padding-left: 1%;
+}
+
+.modal-header-button {
+  cursor: pointer;
+  z-index: 200;
+}
+
+.modal-container > .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+  color: black;
+  z-index: 200;
+}
+
+
+.modal-container > div > img {
+  height: 95px;
+  width: 110px;
+  z-index: 200;
+}
+
+.total-content {
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
+  z-index: 200;
+}
+
+.modal-text{
+  padding: 8%;
+}
+
+.btn-blue{
+  padding-bottom: 2%;
+  z-index: 200;
+}
+
+//manito en la cruz de eliminar producto y en el más y el menos
+.pointer {
+  cursor: pointer;
+}
+
+
+//flecha
+.arrow {
+  color: #e7af99;
+  font-size: 30px;
+  position: fixed;
+  right: 15px;
+  bottom: 5px;
+}
+
+
+//checkout
+.checkout{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.paddingCheckout{
+  padding-top: 2%;
+}
+
+.payment-info{
+  border-bottom: 1.4px solid  #698faa;
+  padding-bottom: 3%;
+}
+
+.payment-title{
+  padding-top: 3%;
+  font-size: 1.3rem;
+  font-family: "Overlock SC", sans-serif;
+}
+
+.paddingP{
+  padding-left: 1%;
+  padding-right: 1%;
+}
